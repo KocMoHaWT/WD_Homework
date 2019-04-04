@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>3_column_ex</title>
+   <meta charset="utf-8">
+   <style type="text/css">
+	   body {
+		   height: 1000px;
+
+	   }
+
+	   * {
+		margin: 0;
+	   	box-sizing: border-box;
+	   }
+
+	   header {
+	   	background-color: red;
+	   }
+
+	   header h1 {
+	   	text-align: center;
+	   }
+
+	   .wrapper {
+		   height: 100%;
+		   display: flex;
+		   padding-bottom: 50px;
+
+	   }
+
+	   .menu, .sideBar{
+			padding: 10px;
+			margin: 10px;
+			width: 20%;
+	   }
+	   .content {
+		width: 50%;
+	   }
+
+	   footer {
+		   background-color: cadetblue;
+		   height: 50px;
+		   margin-top: -50px;
+	   }
+   </style>
+ </head>
+ <body>
+ 	<header>
+ 		<h1> Just Header</h1>
+ 	</header>
+	<section class="wrapper">
+		<section class="menu">
+			<ul>
+				<li><a href="">first</a></li>
+				<li><a href="">second</a></li>
+				<li><a href="">third</a></li>
+			</ul>
+		</section>
+		<section class="content">
+			<div class="firstContent">
+				<h1>First Issue</h1>
+				<p>bla bla bla bla</p>
+				</div>
+			<div class="secondContent">
+				<h1>Defend rights of Cats!</h1>
+				<p>Cats need us to protect them from cruelty.
+					You can help us fight against cruelty and make the world a safer place for cats today!</p>
+			</div>
+		</section>
+		<section class="sideBar">
+			<ul>
+				<li><a href="">first</a></li>
+				<li><a href="">second</a></li>
+				<li><a href="">third</a></li>
+			</ul>
+		</section>
+	 </section>
+ 	<footer>
+		Some text
+	</footer>
+ </body> 
+</html>
