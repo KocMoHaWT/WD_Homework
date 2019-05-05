@@ -96,6 +96,7 @@ input[type="submit"],button {
 	padding: 20px;
 	flex-direction: column;
 	align-items: center;
+
 }
 .block>p {
 	font-size: 20px;
@@ -114,7 +115,7 @@ span {
 	background-color:  #1abc9c;
 	border-radius: 50%;
 	text-align: center;
-	
+	color: white;
 }
 
 .icon1 i {
@@ -161,7 +162,7 @@ input[type="submit"] {
 	#product .container,
 	#info .container{
 		display: block;
-		flex-wrap: wrap;
+
 
 	}
 	form {
