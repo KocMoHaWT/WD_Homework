@@ -46,6 +46,7 @@ const ATM = {
         if(this.isAuth && amount <= user.debet) {
             console.log('ok here is your money');
             user.debet -= amount;
+            this.cash -= amount;
             this.logs.push("Date = " + Date() + "  User = " + this.currentUser.type + " Action = get cash; Result = success");
         } else {
             console.log('Not authorized or amount more than on your account')
