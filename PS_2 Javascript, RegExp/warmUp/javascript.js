@@ -120,6 +120,7 @@
             let a = document.createElement("a");
             a.href = "https://" + url_arr[i];
             a.title = "1";
+            a.target = "_blank";
             a.text = url_arr[i];
             div.appendChild(a)
         }

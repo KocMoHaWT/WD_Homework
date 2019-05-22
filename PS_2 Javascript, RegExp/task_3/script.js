@@ -36,7 +36,7 @@ function abrakadabra() {
             inTotal += obj.price * obj.amount;
         }
     }
-    totalPrice.innerText = inTotal;
+    totalPrice.innerText = inTotal + " $";
 }
 selector.onchange = function () {
     abrakadabra();
