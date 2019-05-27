@@ -1,16 +1,16 @@
     const input = document.getElementById("task_1");
 
     input.addEventListener("click",()=>{
-    let a = +document.getElementById("number_1").value;
-    const b = +document.getElementById("number_2").value;
-    let c = 0;
+    let firstNumber = +document.getElementById("number_1").value;
+    const secondNumber = +document.getElementById("number_2").value;
+    let sum = 0;
      const div = document.getElementById("asd");
-    for(;a <= b;a++) {
-        if (a%10===2 || a%10===3 || a%10===7) {
-            c += a;
+    for(;firstNumber <= secondNumber;firstNumber++) {
+        if (firstNumber % 10 === 2 || firstNumber % 10 === 3 || firstNumber %10===7) {
+            sum += firstNumber;
         }
     }
-    div.innerHTML = "" + c;
+    div.innerHTML = "" + sum;
 
    });
 
@@ -71,6 +71,7 @@
 
     input_task_4.addEventListener("click",() => {
         const div = document.getElementsByClassName("task4")[0];
+
         let cordinates = document.getElementById("square").value
             .split("x");
         let conteiner = document.createElement("div");
