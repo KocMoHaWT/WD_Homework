@@ -1,0 +1,36 @@
+.wraper {
+    height: 100vh;
+}
+li {
+    list-style-type:none;
+}
+.select {
+    width: 150px;
+    margin: auto;
+    margin-top: 200px;
+    border: 1px solid black;
+    padding-inline-start: 0px;
+    border-radius:8px;
+
+}
+
+li>img {
+    vertical-align: middle;
+}
+i {
+    margin-left: 5px;
+}
+.list__block {
+    border-radius: 8px;
+    border-bottom: 1px  solid rgba(224, 196, 196, 0.34);
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+.picked {
+    background-color: darkgrey;
+}
