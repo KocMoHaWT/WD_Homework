@@ -11,49 +11,48 @@
 		<p>Введите два числа</p>
 		<input type="number" name="number_1" id="number_1" placeholder="число 1">
 		<input type="number" name="number_2" id="number_2" placeholder="число 2">
-		<input type="submit" name="task1_5" id="task_1">
-        <div id="asd"></div>
+		<input type="button" name="task1_5" id="task_1" value="Получить результат">
+        <div id="task1"></div>
     </div>
 	<div class="task">
 		<p>Введите количество секунд</p>
 		<input type="text" name="time" id="time_s">
-		<input type="submit" name="task_2" id="task_2_0">
+		<input type="button" name="task_2" id="task_2_0" value="Получить результат">
 		<div id="task2"></div>
 	</div>
 	<div class="task">
-		<p>Введите дату</p>
+		<p>Введите время в формате hh:mm:ss. <br />Результатом будет ваша дата в секундах</p>
 		<input type="text" name="time" id="time">
-		<input type="submit" name="task2_5" id="task_2_5">
+		<input type="button" name="task2_5" id="task_2_5" value="Получить результат">
 		<div id="task2.5"></div>
 	</div>
 	<div class="task">
-		<p>Введите два даты</p>
+		<p>Введите две даты</p>
 		<input type="datetime-local" name="data_1" id="data_1">
 		<input type="datetime-local" name="data_2" id="data_2">
-		<input type="submit" name="task_3" id="task_3">
+		<input type="button" name="task_3" id="task_3" value="Получить результат">
 		<div id="task3"></div>
 	</div>
 	<div class="task">
-		<p>Введите габариты шахматной доски</p>
+		<p>Введите габариты шахматной доски.<br /> Ввиде "4х4".</p>
 		<input type="text" name="square" id="square">
-		<input type="submit" name="task_4" id="task_4" >
+		<input type="button" name="task_4" id="task_4" value="Получить результат">
 		<div id="task4" class="task4"></div>
 	</div>
 
 	<div class="task">
-		<p>Введите что то ;D</p>
+		<p>Введите ссылки ссылки или ip через запятую.<br/> Результатом будут ссылки и ip которые прошли проверку.<br/>
+		После ввода, уберите курсор с поля ввода</p>
 		<textarea name="text" id="list"></textarea>
-		<input type="submit" name="task_5" id="task_5" >
 		<div id="task5" class="task5"></div>
 	</div>
 	<div class="task">
+		<p>Введите регулярное выражение и текст. <br/>Результатом будет текст с маркероваными частями подходящими под ваше регулярное выражение </p>
 		<input type="text" name="reg_exp" id="task_6_regexp">
 		<textarea name="text" id="task_6_text"></textarea>
-		<input type="submit" id="task_6">
+		<input type="button" id="task_6" value="Получить результат">
 		<div id="task6"></div>
 	</div>
-
-
-	<script src="javascript.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>
