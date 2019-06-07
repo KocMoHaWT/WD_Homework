@@ -1,11 +1,11 @@
-const input = document.getElementById("task_1");
+const firstInputTask = document.getElementById("task_1");
 
-input.addEventListener("click", () => {
-    let firstNumber = +document.getElementById("number_1").value;
+firstInputTask.addEventListener("click", () => {
+    const firstNumber = +document.getElementById("number_1").value;
     const secondNumber = +document.getElementById("number_2").value;
     let sum = 0;
     const answerBlock = document.getElementById("task1");
-    for (; firstNumber < secondNumber; firstNumber++) {
+    for (let i = firstNumber; firstNumber < secondNumber; i++) {
         let num = Math.abs(firstNumber) % 10;
         if (num === 2 || num === 3 || num === 7) {
             sum += firstNumber;
@@ -15,73 +15,77 @@ input.addEventListener("click", () => {
 
 });
 
-const input_task_2 = document.getElementById("task_2_0");
+const secondInputTask1 = document.getElementById("task_2_0");
 
-input_task_2.addEventListener("click", () => {
+secondInputTask1.addEventListener("click", () => {
     const answerBlock = document.getElementById("task2")
+    const minute = 60;
     let time = document.getElementById("time_s").value;
     if (time < 0) {
         return "incorrect time in seconds";
     }
-    let minutes = Math.floor((time - (time % 60)) / 60 % 60);
-    let hours = Math.floor(time / 60 / 60);
-    time = time % 60;
+    const minutes = Math.floor((time - (time % minute)) / minute % minute);
+    const hours = Math.floor(time / minute / minute);
+    time = time % minute;
 
-    answerBlock.innerText = "Answer is " + ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) + ":" + time;
+    answerBlock.innerText = "Answer is " + ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) + ":" + ("0" + time).slice(-2);
 })
 
-const input_task_2_5 = document.getElementById("task_2_5");
+const secondInputTask2 = document.getElementById("task_2_5");
 
-input_task_2_5.addEventListener("click", () => {
+secondInputTask2.addEventListener("click", () => {
+    const minute = 60;
     const answerBlock = document.getElementById("task2.5");
-    let time = document.getElementById("time").value;
-    let time_array = time.split(":", 3);
+    const time = document.getElementById("time").value;
+    const time_array = time.split(":", 3);
     if (time_array[0] < 0 ||
         time_array[1] < 0 ||
         time_array[2] < 0) {
         return "incorrect data";
     }
-    let answer = time_array[0] * 3600 + time_array[1] * 60 + +time_array[2];
+    const answer = time_array[0] * minute * minute + time_array[1] * minute + +time_array[2];
     answerBlock.innerHTML = "Answer is " + answer;
 
 })
 
-const input_task_3 = document.getElementById("task_3");
+const thirdInputTask = document.getElementById("task_3");
 
-input_task_3.addEventListener("click", () => {
-    let answerBlock = document.getElementById("task3");
-    let container = document.createElement("div");
-    let data_1 = document.getElementById("data_1").value
-        .replace(/[-T:]/g, "/")
-        .split("/");
-
-    let data_2 = document.getElementById("data_2").value
-        .replace(/[-T:]/g, "/")
-        .split("/");
-    console.log(data_1);
+thirdInputTask.addEventListener("click", () => {
+    const answerBlock = document.getElementById("task3");
+    const container = document.createElement("div");
+    const firstDate = new Date(document.getElementById("data_1").value);
+    const secondDate = new Date(document.getElementById("data_2").value);
+    const diffTime  = Math.abs(secondDate - firstDate);
+    const seconds = 1000,
+        minutes = 60,
+        hours = 24,
+        days = 30,
+        months= 12,
+        daysInYear = 360;
+    answerBlock.innerHTML = "";
     container.innerHTML = "Answer is ";
-    container.append(" " + Math.abs(parseInt(data_1[0]) - parseInt(data_2[0])) + "year(s), ");
-    container.append(" " + Math.abs(parseInt(data_1[1]) - parseInt(data_2[1])) + "month(s), ");
-    container.append(" " + Math.abs(parseInt(data_1[2]) - parseInt(data_2[2])) + "day(s), ");
-    container.append(" " + Math.abs(parseInt(data_1[3]) - parseInt(data_2[3])) + "hour(s), ");
-    container.append(" " + Math.abs(parseInt(data_1[4]) - parseInt(data_2[4])) + "minute(s) ");
+    container.append(" " + Math.floor(diffTime / (seconds * minutes * minutes * hours * daysInYear)) + " year(s), ");
+    container.append(" " + Math.floor((diffTime / (seconds * minutes * minutes * hours * days)) % months)  + " month(s), ");
+    container.append(" " + Math.floor((diffTime / (seconds * minutes * minutes * hours)) % days) + " day(s), ");
+    container.append(" " + Math.floor((diffTime / (seconds * minutes * minutes)) % hours) + " hour(s), ");
+    container.append(" " + Math.floor((diffTime / (seconds * minutes)) % minutes) + " minute(s) ");
     answerBlock.appendChild(container);
 });
 
-const input_task_4 = document.getElementById("task_4");
+const forthInputTask = document.getElementById("task_4");
 
-input_task_4.addEventListener("click", () => {
-
+forthInputTask.addEventListener("click", () => {
+    const blockSize = 20;
     const answerBlock = document.getElementById("task4");
     answerBlock.innerHTML = "";
 
-    let cordinates = document.getElementById("square").value
+    const cordinates = document.getElementById("square").value
         .split("x");
-    let conteiner = document.createElement("div");
-    let x = cordinates[0];
-    let y = cordinates[1]
-    answerBlock.style.width = "" + x * 20 + "px";
-    answerBlock.style.height = "" + y * 20 + "px";
+    const conteiner = document.createElement("div");
+    const x = cordinates[0];
+    const y = cordinates[1]
+    answerBlock.style.width = "" + x * blockSize + "px";
+    answerBlock.style.height = "" + y * blockSize + "px";
     let element;
     let color = 0;
     for (let i = 0; i < cordinates[1]; i++) {
@@ -108,16 +112,17 @@ input_task_4.addEventListener("click", () => {
 
 
 const list = document.getElementById("list");
+
 list.addEventListener("focusout", () => {
-    let elements = list.value;
-    let regexp_url = new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
-    let url_arr = elements.split(",").filter(n => n.match(regexp_url));
+    const elements = list.value;
+    const regexp_url = new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
+    const url_arr = elements.split(",").filter(n => n.match(regexp_url));
     for (let i = 0; i < url_arr.length; i++) {
         url_arr[i] = url_arr[i].replace(/^https?:\/\//, '');
     }
     url_arr.sort();
-    let first_div = document.getElementById("task5");
-    let div = document.createElement("div");
+    const first_div = document.getElementById("task5");
+    const div = document.createElement("div");
     for (let i = 0; i < url_arr.length; i++) {
         let a = document.createElement("a");
         a.href = "https://" + url_arr[i];
@@ -132,16 +137,13 @@ list.addEventListener("focusout", () => {
 
 });
 
-const input_task_6 = document.getElementById("task_6");
+const inputTask6 = document.getElementById("task_6");
 
-input_task_6.addEventListener("click", () => {
-    let reg_exp = new RegExp(document.getElementById("task_6_regexp").value, 'gm');
+inputTask6.addEventListener("click", () => {
+    const reg_exp = new RegExp(document.getElementById("task_6_regexp").value, 'gm');
     let text = document.getElementById("task_6_text").value;
 
     text = text.replace(reg_exp, '<mark>$&</mark>');
-    let global_div = document.getElementById("task6");
+    const global_div = document.getElementById("task6");
     global_div.innerHTML = text;
 });
-
-
-

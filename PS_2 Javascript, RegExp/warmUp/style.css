@@ -14,7 +14,7 @@ body {
     font: 400 14px 'Roboto', sans-serif;
 }
 
-.task {
+.task__block {
     padding: 20px ;
     display: flex;
     flex-direction: column;
@@ -27,27 +27,27 @@ body {
     margin-bottom: 10px;
 }
 
-.task p{
+.task__block p{
     font-size:20px;
 }
 
-.task div {
+.task__block div {
  align-items: center;
 }
 
-.task input  {
+.task__block input  {
     width: 20%;
     background-color: white;
     margin-bottom: 20px;
     border: none;
     outline: none;
 }
-.task input[type="submit"] {
+.task__block input[type="submit"] {
     margin-top: 20px;
     width: 100px;
 
 }
-.task textarea {
+.task__block textarea {
     width: 20%;
     background-color: white;
     margin-bottom: 10px;
@@ -76,7 +76,7 @@ body {
     border: 1px solid black ;
 }
 
-.task {
+.task__block {
     display: flex;
 }
 .task5_5 {

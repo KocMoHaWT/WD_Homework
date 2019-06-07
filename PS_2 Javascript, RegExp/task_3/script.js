@@ -1,4 +1,4 @@
-const inputSearch = document.getElementById("input");
+const inputSearch = document.getElementById("firstInputTask");
 const table = document.getElementById("tableBody");
 const selector = document.getElementById("selector");
 const totalPrice = document.getElementById("inTotal");
