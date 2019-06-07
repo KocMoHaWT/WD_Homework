@@ -116,7 +116,7 @@ const list = document.getElementById("list");
 list.addEventListener("focusout", () => {
     const elements = list.value;
     const regexp_url = new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
-    const url_arr = elements.split(",").filter(n => n.match(regexp_url));
+    const url_arr = elements.split(",").filter(n => n.trim().match(regexp_url));
     for (let i = 0; i < url_arr.length; i++) {
         url_arr[i] = url_arr[i].replace(/^https?:\/\//, '');
     }
