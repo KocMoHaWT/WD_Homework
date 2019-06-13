@@ -1,9 +1,12 @@
-.wraper {
+.wrapper {
     height: 100vh;
 }
+
 li {
+    padding-left: 5px;
     list-style-type:none;
 }
+
 .select {
     width: 150px;
     margin: auto;
@@ -11,7 +14,6 @@ li {
     border: 1px solid black;
     padding-inline-start: 0px;
     border-radius:8px;
-
 }
 
 li>img {
@@ -21,15 +23,14 @@ i {
     margin-left: 5px;
 }
 .list__block {
-    border-radius: 8px;
+    border-radius: 7px;
     border-bottom: 1px  solid rgba(224, 196, 196, 0.34);
 }
+
 .hide {
     display: none;
 }
-.show {
-    display: block;
-}
+.show {}
 
 .picked {
     background-color: darkgrey;

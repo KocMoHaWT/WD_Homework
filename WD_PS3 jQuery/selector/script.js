@@ -12,35 +12,35 @@ const array = [
         src:"./images/Jenny_Hess.png"
     },
     {
-        info: "Бараш",
+        info: "Совунья",
         src:"./images/Stevie_Feliciano.png"
     }];
-
-
+const select = $('.select');
 $(document).ready(() => {
+    let flag = false;
     const li = '<li></li>';
-    const select = $('.select');
-
-
-
     array.map(function(element){
+        let info = element.info;
         select.append($(li)
             .addClass('list__block hide')
-            .attr('value',element.info)
-            .html(`<img src="${element.src}" alt="${element.info}"> ${element.info}`));
+            .attr('value',info)
+            .html(`<img src="${element.src}" alt="${info}"> ${info}`));
     });
     $('li:last-child').css('border','none');
-
-    $('#option').click(function () {
-        $('li').not(this).toggleClass('hide');
-    })
-
 
     $('li').on('mouseover mouseout',function () {
         $(this).toggleClass('picked');
     })
 
-    $('li:not(:first-child)').click(function () {
+    $('li').on('click', function () {
+        $('.show').removeClass('show');
+        $(this).addClass('show');
         $('li').not(this).toggleClass('hide');
-    })
+    });
+
+    $(document).on('click', function (e) {
+      if(!$(e.target).hasClass('list__block') ) {
+          $('li').not($('.show')).addClass('hide');
+      }
+    });
 });
