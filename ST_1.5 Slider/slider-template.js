@@ -1,9 +1,7 @@
 const API_URL = 'https://picsum.photos/';
 const BIG_SIZE = '600/400';
 const SMALL_SIZE = '60/';
-const currBlock = $('.slider-current');
-const othersImg = $('.slider-previews');
-let index = 0;
+
 const IMAGES = [
   '?image=1080', 
   '?image=1079', 
@@ -13,6 +11,9 @@ const IMAGES = [
   '?image=1039'
 ];
 $(document).ready(() => {
+  const currBlock = $('.slider-current');
+  const othersImg = $('.slider-previews');
+  let index = 0;
   $(window).on('keydown', function (event) {
     let imgNext;
     if (event.which === 39) {
@@ -49,10 +50,11 @@ $(document).ready(() => {
       othersImg.append(img);
     }
     function change(imgSrc,imgIndex) {
-        currBlock.html(`<img src="${imgSrc.replace(SMALL_SIZE, BIG_SIZE)}" alt="${imgIndex}">`);
+        imgSrc.replace(SMALL_SIZE, BIG_SIZE);
+        $('.slider-current img').attr('src',imgSrc).attr('alt',imgIndex);
         $('.current').toggleClass('current');
     }
-    $('li img').on('click', function(e) {
+    $('.slider-previews img').on('click', function(e) {
         change(this.src,+this.alt);
         index = +this.alt;
         $(this).parent().addClass('current');
