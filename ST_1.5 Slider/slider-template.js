@@ -50,7 +50,7 @@ $(document).ready(() => {
       othersImg.append(img);
     }
     function change(imgSrc,imgIndex) {
-        imgSrc.replace(SMALL_SIZE, BIG_SIZE);
+        imgSrc = imgSrc.replace(SMALL_SIZE, BIG_SIZE);
         $('.slider-current img').attr('src',imgSrc).attr('alt',imgIndex);
         $('.current').toggleClass('current');
     }
