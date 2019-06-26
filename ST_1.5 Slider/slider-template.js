@@ -43,11 +43,8 @@ $(document).ready(() => {
 
     currBlock.append(`<img src="${API_URL + BIG_SIZE + IMAGES[0]}" alt="0">`);
     for (let i = 0; i < IMAGES.length; i++) {
-      let img = `<li><img src="${API_URL + SMALL_SIZE + IMAGES[i]}" alt="${i}"></li>`;
-      if(i === 0) {
-        img = `<li class="current"><img src="${API_URL + SMALL_SIZE + IMAGES[i]}" alt="${i}"></li>`;
-      }
-      othersImg.append(img);
+        let img =  `<li class="${i=== 0 ? 'current' : ''}"><img src="${API_URL + SMALL_SIZE + IMAGES[i]}" alt="${i}"></li>`;
+         othersImg.append(img);
     }
     function change(imgSrc,imgIndex) {
         imgSrc = imgSrc.replace(SMALL_SIZE, BIG_SIZE);
