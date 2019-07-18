@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Yes, drink with spoon in cup",
+        "number": 1
+    },
+    {
+        "name": "Yes, because of it i'm drinking in glasses",
+        "number": 0
+    },
+    {
+        "name": "Yes, I drink tea in sunglasses",
+        "number": 0
+    },
+    {
+        "name": "Yes, i have spoon which i bend for this",
+        "number": 0
+    },
+    {
+        "name": "No, because i'm intelligent ",
+        "number": 2
+    },
+    {
+        "name": "No, i don't take spoon",
+        "number": 1
+    },
+    {
+        "name": "What is it?",
+        "number": 2
+    },
+    {
+        "name": "Put it on table",
+        "number": 1
+    },
+    {
+        "name": "Lay dawn on tab",
+        "number": 12
+    }
+]

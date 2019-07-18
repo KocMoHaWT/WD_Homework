@@ -83,7 +83,7 @@ forthInputTask.addEventListener("click", () => {
         .split("x");
     const conteiner = document.createElement("div");
     const x = cordinates[0];
-    const y = cordinates[1]
+    const y = cordinates[1];
     answerBlock.style.width = "" + x * blockSize + "px";
     answerBlock.style.height = "" + y * blockSize + "px";
     let element;

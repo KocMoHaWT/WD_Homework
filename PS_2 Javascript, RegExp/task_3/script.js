@@ -1,4 +1,4 @@
-const inputSearch = document.getElementById("firstInputTask");
+const inputSearch = document.getElementById("input");
 const table = document.getElementById("tableBody");
 const selector = document.getElementById("selector");
 const totalPrice = document.getElementById("inTotal");
@@ -30,7 +30,7 @@ function compare(a,b,ord,attr) {
 }
 
 inputSearch.oninput = function () {
-renderingArr();
+    renderingArr();
 };
 
 function cleanAll() {
