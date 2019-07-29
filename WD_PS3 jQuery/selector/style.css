@@ -1,5 +1,10 @@
+body {
+    margin: 0;
+}
+
 .wrapper {
-    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 li {
@@ -9,8 +14,6 @@ li {
 
 .select {
     width: 150px;
-    margin: auto;
-    margin-top: 200px;
     border: 1px solid black;
     padding-inline-start: 0px;
     border-radius:8px;
