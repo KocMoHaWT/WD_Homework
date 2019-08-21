@@ -108,7 +108,7 @@
         <h1>Количество начатых сессий</h1>
         <input type="hidden" name="action" value="arrayTask">
         <div class="answer">
-            <label><?php   echo $_SESSION['counters']; ?></label>
+            <label><?= $_SESSION['counters']; ?></label>
         </div>
     </form>
 </div>

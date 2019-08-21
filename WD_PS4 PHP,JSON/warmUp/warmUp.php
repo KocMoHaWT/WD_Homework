@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 switch (htmlentities($_POST['action'])) {
          case 'getSumm':
@@ -129,7 +130,7 @@ function getFileSize($bytes) {
             if($y % 2 === 0) {
                 $color++;
             }
-        }
+         }
         $_SESSION['boardParts'][] = '</div>';
         header('Location: index.php');
     }
@@ -167,7 +168,7 @@ function getFileSize($bytes) {
     function countText() {
         $text = $_POST['someText'];
         $_SESSION['countedElements'] = [];
-        $_SESSION['countedElements'][] = count(explode("/\n/",$text));
+        $_SESSION['countedElements'][] = count(explode("\n",$text));
         $_SESSION['countedElements'][] =  substr_count($text, ' ');
         $_SESSION['countedElements'][] = iconv_strlen($text) - $_SESSION['countedElements'][1];
         header('Location: index.php');
